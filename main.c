@@ -101,8 +101,9 @@ do                                                      \
 #define EN_DEFAULT						1
 #define LED_PIN							3
 #else
-#define UART_RX							11
-#define UART_TX							9
+// RX and TX pins are swapped in comparison to original implementation by @bvedder
+#define UART_RX							9
+#define UART_TX							11
 #define UART_TX_DISABLED				25
 #define EN_DEFAULT						1
 #define LED_PIN							3
