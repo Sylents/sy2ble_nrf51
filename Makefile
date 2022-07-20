@@ -6,14 +6,14 @@ OUTPUT_DIRECTORY := _build
 VERBOSE=1
 
 # Use FW for 16k ram with limited functionality
-FW_16K ?= 0
+FW_16K ?= 1
 
 CFLAGS += $(build_args)
 
-SDK_ROOT := /home/benjamin/Dokument/nrf51822/sdk
+SDK_ROOT := ./nRF5_SDK_12.3.0_d7731ad
 PROJ_DIR := .
 
-SD_PATH := $(SDK_ROOT)/components/softdevice/s130/hex/s130_nrf51_2.0.1_softdevice.hex
+SD_PATH := ./hex/s130_nrf51_2.0.1_softdevice.hex
 TARGET_PATH := $(OUTPUT_DIRECTORY)/$(TARGETS).hex
 
 ifeq ($(FW_16K),0)
@@ -247,8 +247,10 @@ mass_erase:
 merge_hex: $(TARGET_PATH)
 	mkdir -p hex
 	srec_cat $(SD_PATH) -intel $(TARGET_PATH) -intel -o hex/merged.hex -intel --line-length=44
-	arm-none-eabi-objcopy -I ihex -O binary hex/merged.hex hex/merged.bin --gap-fill 0xFF
+	arm-none-eabi-objcopy -I ihex -O binary hex/merged.hex hex/sy2blemodule_merged.bin --gap-fill 0xFF
 
 upload_merged_bin:
-	openocd -f openocd.cfg -c "program hex/merged.bin verify reset exit"
+	openocd -f openocd.cfg -c "program hex/sy2blemodule_merged.bin verify reset exit"
 	
+flash:
+	openocd -f openocd.cfg -c "init" -c "halt" -c "nrf51 mass_erase" -c "program hex/sy2blemodule_merged.bin verify reset exit"
