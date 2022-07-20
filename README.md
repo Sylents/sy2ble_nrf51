@@ -32,3 +32,7 @@ After that it can be connected to the VESC in the following way
 
 Note that a 10 uF ceremaic capacitor between vcc and gnd close to the NRF51 module might be needed if the cables are long. Otherwise the connection can become slow and unstable.
 
+download or install:
+nRF5_SDK 12.3.0 : https://www.nordicsemi.com/Products/Development-software/nRF5-SDK/Download
+sudo apt install srecord (to get srec_cat command)
+
