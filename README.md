@@ -42,3 +42,8 @@ sudo apt install openocd
 SDK 12.3.0 and softdevice 13 are included
 nRF5_SDK 12.3.0 : https://www.nordicsemi.com/Products/Development-software/nRF5-SDK/Download
 
+tested and implemented with 
+Brand Name: Holyiot
+Model Number: YJ-17085
+Chipset: nRF51822
+http://www.holyiot.com/eacp_view.asp?id=325
