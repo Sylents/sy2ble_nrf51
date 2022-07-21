@@ -129,9 +129,9 @@ do                                                      \
 #define PERIPHERAL_LINK_COUNT           1                                           /**< Number of peripheral links used by the application. When changing this number remember to adjust the RAM settings*/
 
 #if MODULE_BUILTIN
-#define DEVICE_NAME                     "VESC BUILTIN BLE"
+#define DEVICE_NAME                     "SY2 BLE BUILTIN"
 #else
-#define DEVICE_NAME                     "VESC BLE UART"
+#define DEVICE_NAME                     "SY2 BLE"
 #endif
 
 #define NUS_SERVICE_UUID_TYPE           BLE_UUID_TYPE_VENDOR_BEGIN                  /**< UUID type for the Nordic UART Service (vendor specific). */

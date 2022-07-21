@@ -1,4 +1,4 @@
-PROJECT_NAME     := vesc_uart_ble
+PROJECT_NAME     := sy2_ble
 TARGETS          := nrf51822_xxac
 OUTPUT_DIRECTORY := _build
 
