@@ -252,5 +252,5 @@ merge_hex: $(TARGET_PATH)
 upload_merged_bin:
 	openocd -f openocd.cfg -c "program hex/sy2blemodule_merged.bin verify reset exit"
 	
-flash:
-	openocd -f openocd.cfg -c "init" -c "halt" -c "nrf51 mass_erase" -c "program hex/sy2blemodule_merged.bin verify reset exit"
+flash_release:
+	openocd -f openocd.cfg -c "init" -c "halt" -c "nrf51 mass_erase" -c "program hex/sy2blemodule_release.bin verify reset exit"
